@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/final-project-shoes-store.git/static/css/main.532f48ae.css",
+    "main.js": "/final-project-shoes-store.git/static/js/main.9ac5c5fd.js",
+    "static/js/787.cec75491.chunk.js": "/final-project-shoes-store.git/static/js/787.cec75491.chunk.js",
+    "static/media/slick.svg": "/final-project-shoes-store.git/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/final-project-shoes-store.git/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/final-project-shoes-store.git/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/final-project-shoes-store.git/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/final-project-shoes-store.git/index.html",
+    "main.532f48ae.css.map": "/final-project-shoes-store.git/static/css/main.532f48ae.css.map",
+    "main.9ac5c5fd.js.map": "/final-project-shoes-store.git/static/js/main.9ac5c5fd.js.map",
+    "787.cec75491.chunk.js.map": "/final-project-shoes-store.git/static/js/787.cec75491.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.532f48ae.css",
+    "static/js/main.9ac5c5fd.js"
+  ]
+}
