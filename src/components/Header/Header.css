@@ -1,0 +1,29 @@
+.header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    width:100%;
+    background-color: black;
+    color:white;
+    padding: 0 40px;
+    font-size:18px;
+    text-transform: uppercase;
+    height:100px;
+}
+.center{
+    display: flex;
+    justify-content: space-between;
+    gap:10px;
+    width: 50%
+}
+.center-item{
+    width: 50%;
+    
+}
+.header-right{
+    display: flex;
+    gap:10px
+}
+.nav-link{
+    color:white
+}
