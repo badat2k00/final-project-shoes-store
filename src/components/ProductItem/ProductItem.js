@@ -21,8 +21,8 @@ const ProductItem = (props) => {
             className="card-img-top p-3 "
             alt={productName}
           />
-          <div class="overlay">
-            <button class="text" onClick={() => onAddToCart(productId)}>Add to cart </button>
+          <div className="overlay">
+            <button className="text" onClick={() => onAddToCart(productId)}>Add to cart </button>
           </div>
 
         </div>
