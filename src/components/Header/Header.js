@@ -13,6 +13,10 @@ const Header = (props) => {
     console.log(" I am here");
     navigate("/cart");
   };
+  const handleLogout = () => {
+    // logic hendleLogout
+    navigate("/log-in");
+  };
   return (
     <header>
       {/* <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -85,7 +89,8 @@ const Header = (props) => {
             </div>
           </div>
           <div className="header-right">
-          <div>Login</div>
+          <div onClick={handleLogout}>Logout</div>
+          
           <div
             // className="d-flex align-items-center gap-3 pointer-event"
             onClick={onNavigateToCartPage}

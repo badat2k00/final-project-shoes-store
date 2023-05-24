@@ -14,7 +14,8 @@ import ProductDetail from "./pages/ProductDetail/ProductDetail";
 import NotFound from "./pages/NotFound/NotFound";
 import AppContext from "./contexts/AppContext";
 import { Footer } from "./components/Footer/Footer";
-
+import Login from "./pages/Login/Login";
+import Register from "./pages/Register/Register";
 
 const App = () => {
   // States
@@ -109,13 +110,15 @@ const App = () => {
         
         <main className="container py-3">
           <Routes>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/products/:productId" element={<ProductDetail />} />
-            <Route path="/about-us" element={<AboutUs />} />
-            <Route path="/admin" element={<Admin />} />
+            <Route path="/log-in" Component={<Login />}/>
+            <Route path="/sign-up" Component={<Register />}/>           
+            <Route path="/" Component={<Homepage />} />
+            <Route path="/products/:productId" Component={<ProductDetail />} />
+            <Route path="/about-us" Component={<AboutUs />} />
+            <Route path="/admin" Component={<Admin />} />
             <Route
               path="/cart"
-              element={
+              Component={
                 <Cart
                   cart={cart}
                   onDeleteCartItem={onDeleteCartItem}
@@ -124,7 +127,7 @@ const App = () => {
                 />
               }
             />
-            <Route path="*" element={<NotFound />} />
+            <Route path="*" Component={<NotFound />} />
           </Routes>
         </main>
         <Footer />
