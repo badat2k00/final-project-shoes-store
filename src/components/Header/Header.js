@@ -26,8 +26,10 @@ const Header = (props) => {
      {isLoggedIn ?  (<nav>
         <div className="header">
           <div>
+          <Link className="nav-link active" to="/">
             <img src="https://conversestore.vn/wp-content/uploads/2020/09/store-giay.png" alt="logo"/>
-          </div>
+          </Link>
+          </div>>
           <div className="center">
             <div className="center-item">
               <Link className="nav-link active" to="/">
