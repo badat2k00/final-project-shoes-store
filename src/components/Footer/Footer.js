@@ -6,7 +6,7 @@ export const Footer = () => {
   // console.log(appCtx);
   return (
     <div className="footer">
-      <h2>Copyright 2023. Converse.Store_</h2>
+      <h3>Copyright 2023. Converse.Store_</h3>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import AppContext from "../../contexts/AppContext";
 import ProductItem from "../ProductItem/ProductItem";
 import { useContext } from "react";
+import './ProductList.css';
 
 const ProductList = (props) => {
   const { onAddToCart } = props;
@@ -11,13 +12,14 @@ const ProductList = (props) => {
   // Conditional rendering
   const listProducts = isValidProducts ? (
     products.map((product) => {
-      const { productImage, productName, id, productPrice } = product;
+      const { productImage, productName, id, productPrice,productOriginPrice } = product;
       return (
         <ProductItem
           productImage={productImage}
           productName={productName}
           productId={id}
-          productPrice={productPrice}
+          productPrice={productPrice.toLocaleString('de-DE')}
+          productOriginPrice={productOriginPrice.toLocaleString('de-DE')}
           key={id}
         />
       );
@@ -27,8 +29,7 @@ const ProductList = (props) => {
   );
 
   return (
-    <div>
-      <h6>{products.length} products</h6>
+    <div className="productlist">
       <div className="row">{listProducts}</div>
     </div>
   );

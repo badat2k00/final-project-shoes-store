@@ -1,5 +1,6 @@
 import { FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { TbCurrencyDong } from "react-icons/tb";
 const CartInformation = (props) => {
   const { cart, onIncreaseQuantity, onDecreaseQuantity, onDeleteCartItem } =
     props;
@@ -11,7 +12,7 @@ const CartInformation = (props) => {
       totalPrice += cartItem.productPrice * cartItem.quantity;
     }
 
-    return totalPrice;
+    return totalPrice.toLocaleString('de-DE');
   };
   const totalPrice = getTotalPrice(cart);
   const cartBodyElements = cart.map((cartItem, index) => {
@@ -21,12 +22,12 @@ const CartInformation = (props) => {
     return (
       <tr key={id}>
         <th scope="row">{index}</th>
-        <td>{productName}</td>
-        <td>
+        <td className="text-center">{productName}</td>
+        <td style={{paddingLeft:"45px"}}>
           <img src={productImage} alt="Cart image" height={"50px"} />
         </td>
-        <td>{productPrice}</td>
-        <td>
+        <td className="text-center">{productPrice.toLocaleString('de-DE')}<TbCurrencyDong style={{marginBottom:"6px",fontSize:"22px"}}/></td>
+        <td style={{paddingLeft:"120px"}}>
           <button
             className="btn btn-primary"
             onClick={() => onDecreaseQuantity(id)}
@@ -42,10 +43,10 @@ const CartInformation = (props) => {
             +
           </button>
         </td>
-        <td>{quantity * productPrice}</td>
-        <td>
+        <td className="text-center">{(quantity * productPrice).toLocaleString('de-DE')}<TbCurrencyDong style={{marginBottom:"6px",fontSize:"22px"}}/></td>
+        <td style={{paddingLeft:"41px"}}>
           <button
-            className="btn btn-danger"
+            className="btn btn-danger text-center"
             onClick={() => onDeleteCartItem(id)}
           >
             <FaTrashAlt />
@@ -69,12 +70,12 @@ const CartInformation = (props) => {
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Image</th>
-            <th scope="col">Price</th>
-            <th scope="col">Quantity</th>
-            <th scope="col">Total</th>
-            <th scope="col">...</th>
+            <th scope="col" className="text-center">Name</th>
+            <th scope="col" className="text-center">Image</th>
+            <th scope="col" className="text-center">Price</th>
+            <th scope="col" className="text-center">Quantity</th>
+            <th scope="col" className="text-center">Total</th>
+            <th scope="col" className="text-center">Delete</th>
           </tr>
         </thead>
         <tbody>
@@ -85,7 +86,7 @@ const CartInformation = (props) => {
             <td></td>
             <td></td>
             <td></td>
-            <td>{totalPrice}</td>
+            <td className="text-center">{totalPrice.toLocaleString('de-DE')} <TbCurrencyDong style={{marginBottom:"6px",fontSize:"22px"}}/></td>
             <td></td>
           </tr>
         </tbody>

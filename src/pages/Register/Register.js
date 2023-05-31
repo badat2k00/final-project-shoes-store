@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
-
+import './Register.css';
 const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -30,9 +30,9 @@ const Register = () => {
   };
 
   return (
-    <div className='d-flex flex-column justify-content-center align-items-center rounded-3 '>
-      <h2>Đăng ký</h2>
-      <form onSubmit={handleRegister} >
+    <div className='box'>
+      <form onSubmit={handleRegister} className='form-register'>
+      <h2>Register</h2>
         <label>
           Email:
           <br/>
@@ -40,14 +40,15 @@ const Register = () => {
         </label>
         <br />
         <label>
-          Mật khẩu:
+          Password
           <br/>
           <input type="password" value={password} onChange={handlePasswordChange} />
         </label>
         <br />
-        <div className='d-flex flex justify-content-center align-items-center mt-2'>
-        <button type="submit">Đăng ký</button>
-        </div>
+        <br />
+       
+        <button type="submit"  className='logout-button'>Sign Up</button>
+        
       </form>
     </div>
   );

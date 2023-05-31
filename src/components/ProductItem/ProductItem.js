@@ -1,10 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import "./Product.css";
 // import { FaCartPlus } from "react-icons/fa";
+ import { TbCurrencyDong } from "react-icons/tb";
 import { useContext } from "react";
 import AppContext from "../../contexts/AppContext";
 const ProductItem = (props) => {
-  const { productImage, productName, productId, productPrice } = props;
+  const { productImage, productName, productId, productPrice,productOriginPrice } = props;
   const { onAddToCart } = useContext(AppContext);
   const navigate = useNavigate();
 
@@ -13,7 +14,7 @@ const ProductItem = (props) => {
     navigate(to);
   };
   return (
-    <div className="col-6 col-md-4 col-lg-3 mb-4 product">
+    <div className="col-6 col-md-4 col-lg-3 mb-4 product" onDoubleClick={onNavigateToProductDetail}>
       <div className="card">
         <div className="card-img .filter_grayscale">
           <img
@@ -27,24 +28,11 @@ const ProductItem = (props) => {
 
         </div>
         <div className="card-body">
-          <h5 className="card-title">{productName}</h5>
-          <div className="card-information d-flex items-center justify-content-between">
-            <span className=" text-primary">$ {productPrice}</span>
-            {/* <button
-              className="btn btn-primary"
-              onClick={() => onAddToCart(productId)}
-            >
-              <FaCartPlus />
-            </button> */}
+          <h5 className="card-title text-center">{productName}</h5>
+          <div className=" text-center">
+            <span className="origin-price">{productOriginPrice}<TbCurrencyDong/></span>
+            <span>{productPrice}<TbCurrencyDong/></span>
           </div>
-
-          <button
-            className="btn btn-info mt-3 w-100"
-            onClick={onNavigateToProductDetail}
-          >
-            View details
-          </button>
-
         </div>
       </div>
     </div>

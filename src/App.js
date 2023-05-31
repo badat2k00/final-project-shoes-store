@@ -16,6 +16,7 @@ import AppContext from "./contexts/AppContext";
 import { Footer } from "./components/Footer/Footer";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 const App = () => {
   // States
@@ -23,6 +24,7 @@ const App = () => {
   const [cart, setCart] = useState([]);
   // const [lang, setLang] = useState("eng"); //eng / vi
   // const [theme, setTheme] = useState("light"); // dark/light
+
 
   // Functions
   const onAddNewProductToProductList = (product) => {
@@ -97,6 +99,7 @@ const App = () => {
 
     setCart(newCartAfterRemovedItem);
   };
+  
   return (
     <AppContext.Provider
       value={{
@@ -106,16 +109,16 @@ const App = () => {
       }}
     >
       <div className="App">
-        <Header cart={cart} />
-        
+        <Header cart={cart}/>
+
         <main className="container py-3">
           <Routes>
-            <Route path="/log-in" element={<Login />}/>
-            <Route path="/sign-up" element={<Register />}/>           
-            <Route path="/" element={<Homepage />} />
-            <Route path="/products/:productId" element={<ProductDetail />} />
-            <Route path="/about-us" element={<AboutUs />} />
-            <Route path="/admin" element={<Admin />} />
+            <Route path="/log-in" element={<Login />} />
+            <Route path="/sign-up" element={<Register />} />
+            <Route path="/" element={<PrivateRoute component={Homepage} />} />
+            <Route path="/products/:productId" element={<PrivateRoute component={ProductDetail } />} />
+            <Route path="/about-us" element={<PrivateRoute component={AboutUs} />} />
+            <Route path="/admin" element={<PrivateRoute component={Admin} />} />
             <Route
               path="/cart"
               element={
@@ -137,5 +140,3 @@ const App = () => {
 };
 
 export default App;
-
-
