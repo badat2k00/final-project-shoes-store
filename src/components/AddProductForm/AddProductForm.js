@@ -75,7 +75,7 @@ const AddProductForm = (props) => {
         </div>
         <div className="mb-3">
           <label htmlFor="productPrice" className="form-label">
-            Price ($)
+            Price (VNĐ)
           </label>
           <input
             className="form-control"
