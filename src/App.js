@@ -17,16 +17,12 @@ import { Footer } from "./components/Footer/Footer";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import CreatePayOrder from "./pages/CreatePayOrder";
 
 const App = () => {
   // States
   const [products, setProducts] = useState(initialProducts);
   const [cart, setCart] = useState([]);
-  // const [lang, setLang] = useState("eng"); //eng / vi
-  // const [theme, setTheme] = useState("light"); // dark/light
-
-
-  // Functions
   const onAddNewProductToProductList = (product) => {
     const newProduct = {
       ...product,
@@ -39,8 +35,6 @@ const App = () => {
   };
 
   const onAddProductToCart = (productId) => {
-    // console.log("Add new product:", productId);
-
     const existingProduct = products.find(
       (product) => product.id === productId
     );
@@ -83,8 +77,6 @@ const App = () => {
       updatingCart[existingCartItemIndex].quantity;
 
     if (currentCartItemQuantity === 1) {
-      // return;
-      // Thêm logic xoá sản phẩm
       onDeleteCartItem(productId);
     } else {
       updatingCart[existingCartItemIndex].quantity -= 1;
@@ -99,7 +91,7 @@ const App = () => {
 
     setCart(newCartAfterRemovedItem);
   };
-  
+
   return (
     <AppContext.Provider
       value={{
@@ -109,15 +101,21 @@ const App = () => {
       }}
     >
       <div className="App">
-        <Header cart={cart}/>
+        <Header cart={cart} />
 
         <main className="container py-3">
           <Routes>
             <Route path="/log-in" element={<Login />} />
             <Route path="/sign-up" element={<Register />} />
             <Route path="/" element={<PrivateRoute component={Homepage} />} />
-            <Route path="/products/:productId" element={<PrivateRoute component={ProductDetail } />} />
-            <Route path="/about-us" element={<PrivateRoute component={AboutUs} />} />
+            <Route
+              path="/products/:productId"
+              element={<PrivateRoute component={ProductDetail} />}
+            />
+            <Route
+              path="/about-us"
+              element={<PrivateRoute component={AboutUs} />}
+            />
             <Route path="/admin" element={<PrivateRoute component={Admin} />} />
             <Route
               path="/cart"
@@ -131,6 +129,7 @@ const App = () => {
               }
             />
             <Route path="*" element={<NotFound />} />
+            <Route path="/return-success-url" element={<CreatePayOrder/>}/>
           </Routes>
         </main>
         <Footer />

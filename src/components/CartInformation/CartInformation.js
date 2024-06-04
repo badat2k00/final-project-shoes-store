@@ -97,5 +97,3 @@ const CartInformation = (props) => {
 
 export default CartInformation;
 
-// Modal , Popup
-// Refactor code

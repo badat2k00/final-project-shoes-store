@@ -18,8 +18,8 @@ const ProductList = (props) => {
           productImage={productImage}
           productName={productName}
           productId={id}
-          productPrice={productPrice.toLocaleString('de-DE')}
-          productOriginPrice={productOriginPrice.toLocaleString('de-DE')}
+          productPrice={productPrice}
+          productOriginPrice={productOriginPrice}
           key={id}
         />
       );

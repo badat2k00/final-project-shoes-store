@@ -21,6 +21,7 @@ const Header = (props) => {
    
   };
   
+  
   return (
     <header>
      {isLoggedIn ?  (<nav>
@@ -44,7 +45,7 @@ const Header = (props) => {
             </div>
           </div>
           <div className="header-right">
-            <div onClick={handleLogout}>Login</div>
+            <div onClick={handleLogout}>Logout</div>
             <div
               // className="d-flex align-items-center gap-3 pointer-event"
               onClick={onNavigateToCartPage}
@@ -78,14 +79,14 @@ const Header = (props) => {
             
           </div>
           <div className="header-right">
-            <div onClick={handleLogout}>Logout</div>
-            <div
+            <div onClick={handleLogout}>Login</div>
+            {/* <div
               // className="d-flex align-items-center gap-3 pointer-event"
               onClick={onNavigateToCartPage}
             >
               <FaCartPlus />
               <span>({cartAmount})</span>
-            </div>
+            </div> */}
           </div>
         </div>
       </nav>)}
