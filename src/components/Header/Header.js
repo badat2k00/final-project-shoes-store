@@ -64,7 +64,8 @@ const Header = (props) => {
             <div className="center-item">
               <Link className="nav-link active" to="/">
                 Home
-              </Link></div>
+              </Link>
+              </div>
             <div className="center-item">
               <Link className="nav-link" to="/about-us">
                 About us
